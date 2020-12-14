@@ -1,2 +1,2 @@
-# Emily-Niemand.github.io
+# EmilyNiemand.github.io
 My website
