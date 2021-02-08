@@ -5,7 +5,11 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
-                .box {
+            .body{
+                background-image: url("paper.gif");
+ background-color: #706d6d;
+            };
+            .box {
 			width: 80 px;
 			height: 60px;
 			background-color : purple;
@@ -45,12 +49,13 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
+			function moveBoxTo(newPositionX, newPositionY) {
+                box.css("left", newPositionX);
+                box.css("top", newPositionY);
 			}
 
             // changes the text displayed on the Box
-            var clickMouse;
+     
 			function changeBoxText(newText) {
                 box.text(newText);
                 
@@ -64,8 +69,8 @@
             var positionX = 0;
             var points = 0;
             var speed = 10;
-            var positionY=0;
-            var speedY;
+            var positionY = 0;
+            var speedY = 10;
             var boardHeight = jQuery(window).height();
 			
 			/* 
@@ -76,16 +81,24 @@
 			function update() {
                 moveBoxTo(positionX,positionY);
                 positionX = positionX + speed;
-                if (positionX>boardWidth) {
+                positionY = positionY + speedY;
+
+                if (positionX > boardWidth) {
                     speed = speed * -1;
                 }
 
                 if (positionX < 0) {
                     speed = speed * -1;
                 }
-                box.css('left',positionX);
-                box.css('top',positionY);
-               positionY= positionY + speed;
+
+                if (positionY > boardHeight) {
+                    speedY = speedY * -1;
+                }
+
+                if (positionY < 0) {
+                    speedY = speedY * -1;
+                }
+
             };
                 
 
@@ -96,14 +109,11 @@
 			*/
 			function handleBoxClick() {
                 positionX = 0;
+                positionY = 0;
                 changeBoxText(points);
                 points = points + 1;
-                if ( speed>0 ){
-                    speed+=3;
-                }
-                if (speed<0 ){
-                    speed-=3;
-                }
+                speed = speed + 3;
+                speedY = speedY + 3;
 			};
 		})();
 	</script>
