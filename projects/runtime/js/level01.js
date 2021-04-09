@@ -79,6 +79,8 @@ var level01 = function (window) {
   
 
         function createEnemy(x,y){
+             var hitZoneSize = 10;
+            var damageFromObstacle = 10;
             var enemy = game.createGameItem('enemy',25);
             var greenSquare = draw.rect(50,50,'green');
             greenSquare.x = -25;
@@ -106,6 +108,7 @@ var level01 = function (window) {
         
         
          function createReward(x,y){
+              var hitZoneSize = 5;
              var reward = game.createGameItem('reward',25);
             var pinkSquare = draw.rect(50,50,'pink');
             pinkSquare.x = 25;
