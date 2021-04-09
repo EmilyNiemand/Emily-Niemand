@@ -19,13 +19,26 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 400, "y": groundY },
                 { "type": "sawblade", "x": 600, "y": groundY },
                 { "type": "sawblade", "x": 900, "y": groundY },
-                {'type' : "potion", 'x':350,'y':groundY},
-                {'type' : 'greenSquare', 'x':200,'y' : groundY},
+                {'type' : "reward", 'x':450,'y':groundY},
+                {'type' : 'enemy', 'x':200,'y' : groundY},
+                {'type' : 'stones', 'x':1500,'y' : 300},
 
             ]
         };
-        for (var i = 0; i < levelData.length; i++){
-            var eachElement = levelData[i];
+        for (var i = 0; i < levelData.gameItems.length; i++){
+            var object = levelData.gameItems[i];
+            var objX = object.x;
+            var objY = object.y;
+            var objType = object.type;
+
+            if(objType === 'sawblade'){
+                createSawBlade(objX, objY)
+
+            } else if(objType === 'enemy'){
+                createEnemy(objX, objY)
+            } else if(objType === 'stones'){
+                createStones(objX, objY)
+            } else{createReward(objX, objY)}
         }
 
         window.levelData = levelData;
@@ -48,9 +61,7 @@ var level01 = function (window) {
             sawBladeHitZone.addChild(obstacleImage);
         }
 
-        createSawBlade(400,300);
-        createSawBlade(800,200);
-        createSawBlade(1500,300);
+        
        
         
         function createStones(x,y){
@@ -63,7 +74,7 @@ var level01 = function (window) {
             var obstacleImage = draw.bitmap('img/stonelarge.png');
             stoneHitZone.addChild(obstacleImage);
         }
-        createStones(1000, 300);
+        
 
   
 
@@ -92,22 +103,26 @@ var level01 = function (window) {
             }
         }    
 
-        createEnemy (300, 200);
         
-         
-       function healingHealth(x,y){
-           var potion = game.createGameItem('',25);
-            var greenSquare = draw.rect(50,50,'green');
-            greenSquare.x = -25;
-            greenSquare.y = -25;
-            enemy.addChild(greenSquare);
-            enemy.x = 400;
-            enemy.y = groundY - 50;
-            game.addGameItem(enemy);
-            enemy.velocityX = -1 ;
-
-            enemy.rotationalVelocity = 3;
-       }
+        
+         function createReward(x,y){
+             var reward = game.createGameItem('reward',25);
+            var pinkSquare = draw.rect(50,50,'pink');
+            pinkSquare.x = 25;
+            pinkSquare.y = 25;
+            reward.addChild(pinkSquare);
+            reward.x = 900;
+            reward.y = groundY - 50;
+            game.addGameItem(reward);
+            reward.velocityX = -1 ;
+            reward.rotationalVelocity = 3;
+            reward.onProjectileCollision = function(){
+                console.log('Its over 9000!');
+                game.increaseScore(9001);
+                reward.fadeOut();
+            }
+         }
+       
 
 
         
