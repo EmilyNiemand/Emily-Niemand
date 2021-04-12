@@ -111,8 +111,8 @@ var level01 = function (window) {
               var hitZoneSize = 5;
              var reward = game.createGameItem('reward',25);
             var pinkSquare = draw.rect(50,50,'pink');
-            pinkSquare.x = 25;
-            pinkSquare.y = 25;
+            pinkSquare.x = x;
+            pinkSquare.y = x;
             reward.addChild(pinkSquare);
             reward.x = 900;
             reward.y = groundY - 50;
