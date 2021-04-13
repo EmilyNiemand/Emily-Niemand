@@ -22,6 +22,7 @@ var level01 = function (window) {
                 {'type' : "reward", 'x':450,'y':groundY},
                 {'type' : 'enemy', 'x':200,'y' : groundY},
                 {'type' : 'stones', 'x':1500,'y' : 300},
+                {'type' : 'enemy', 'x':2000,'y' : groundY}
 
             ]
         };
