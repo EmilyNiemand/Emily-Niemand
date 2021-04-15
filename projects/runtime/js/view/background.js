@@ -70,11 +70,11 @@ var background = function (window) {
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
             tree.x = 250;
-            tree.y = 100;
+            tree.y = groundY -200;
             background.addChild(tree);
             sandwich = draw.bitmap('img/sandwich.png');
             sandwich.x = 450;
-            sandwich.y = 230;
+            sandwich.y = groundY -80;
             background.addChild(sandwich);
             
 
