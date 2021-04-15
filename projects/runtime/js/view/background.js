@@ -101,6 +101,10 @@ var background = function (window) {
                 var movingTowers = buildings[i];
                 movingTowers.x = movingTowers.x - .5;
             }
+            if  (sandwich.x < -200) {
+                sandwich.x = canvasWidth;
+            }
+            
             
             // TODO 5: Part 2 - Parallax
             
