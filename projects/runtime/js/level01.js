@@ -56,7 +56,7 @@ var level01 = function (window) {
             var damageFromObstacle = 10;
             var sawBladeHitZone = game.createObstacle(hitZoneSize,damageFromObstacle)
             sawBladeHitZone.x = x;
-            sawBladeHitZone.y = y;
+            sawBladeHitZone.y = groundY;
             game.addGameItem(sawBladeHitZone);
             var obstacleImage = draw.bitmap('img/sawblade.png');
             sawBladeHitZone.addChild(obstacleImage);
@@ -70,7 +70,7 @@ var level01 = function (window) {
             var damageFromObstacle = 20;
             var stoneHitZone = game.createObstacle(hitZoneSize,damageFromObstacle)
             stoneHitZone.x = x;
-            stoneHitZone.y = y;
+            stoneHitZone.y = groundY;
             game.addGameItem(stoneHitZone);
             var obstacleImage = draw.bitmap('img/stonelarge.png');
             stoneHitZone.addChild(obstacleImage);
