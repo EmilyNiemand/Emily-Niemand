@@ -109,7 +109,7 @@ var level01 = function (window) {
         
         
          function createReward(x,y){
-              var hitZoneSize = 5;
+              var hitZoneSize = .5;
              var reward = game.createGameItem('reward',25);
             var pinkSquare = draw.rect(50,50,'pink');
             pinkSquare.x = x;
