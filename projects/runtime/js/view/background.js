@@ -28,6 +28,7 @@ var background = function (window) {
         // ANIMATION VARIABLES HERE:
         var tree;
         var buildings = [];
+        var sandwich;
         
      
         // called at the start of game and whenever the page is resized
@@ -71,7 +72,10 @@ var background = function (window) {
             tree.x = 250;
             tree.y = 100;
             background.addChild(tree);
-
+            sandwich = draw.bitmap('img/sandwich.png');
+            sandwich.x = 450;
+            sandwich.y = 230;
+            background.addChild(sandwich);
             
 
             
@@ -88,7 +92,7 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
             tree.x = tree.x - 1;
-
+            sandwich.x = sandwich.x -1;
             if  (tree.x < -200) {
                 tree.x = canvasWidth;
             }
