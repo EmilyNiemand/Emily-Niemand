@@ -53,7 +53,7 @@ var background = function (window) {
             moon.scaleY = -5.0;
             background.addChild(moon);
             for (var i = 0; i < 100; i++){
-                var circle = draw.circle(5,'black','LightGray',2);
+                var circle = draw.circle(5,'black','DarkGray',2);
                     circle.x = canvasWidth*Math.random();
                     circle.y = groundY*Math.random();
                    background.addChild(circle);
