@@ -21,9 +21,8 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 900, "y": groundY },
                 {'type' : "reward", 'x':450,'y':groundY},
                 {'type' : 'enemy', 'x':200,'y' : groundY},
-                {'type' : 'stones', 'x':1500,'y' : 300},
-                {'type' : 'enemy', 'x':2000,'y' : groundY}
-
+                {'type' : 'stones', 'x':1500,'y' : groundY},
+                
             ]
         };
         for (var i = 0; i < levelData.gameItems.length; i++){
@@ -53,7 +52,7 @@ var level01 = function (window) {
         
         function createSawBlade(x,y){
             var hitZoneSize = 25;
-            var damageFromObstacle = 10;
+            var damageFromObstacle = 30;
             var sawBladeHitZone = game.createObstacle(hitZoneSize,damageFromObstacle)
             sawBladeHitZone.x = x;
             sawBladeHitZone.y = groundY;
@@ -67,7 +66,7 @@ var level01 = function (window) {
         
         function createStones(x,y){
             var hitZoneSize = 25;
-            var damageFromObstacle = 20;
+            var damageFromObstacle = 50;
             var stoneHitZone = game.createObstacle(hitZoneSize,damageFromObstacle)
             stoneHitZone.x = x;
             stoneHitZone.y = groundY;

@@ -30,6 +30,7 @@ var background = function (window) {
         var buildings = [];
         var sandwich;
         
+        
      
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
@@ -52,7 +53,7 @@ var background = function (window) {
             moon.scaleY = -5.0;
             background.addChild(moon);
             for (var i = 0; i < 100; i++){
-                var circle = draw.circle(5,'white','LightGray',2);
+                var circle = draw.circle(5,'black','LightGray',2);
                     circle.x = canvasWidth*Math.random();
                     circle.y = groundY*Math.random();
                    background.addChild(circle);
@@ -73,14 +74,14 @@ var background = function (window) {
             tree.x = 250;
             tree.y = groundY -200;
             background.addChild(tree);
+
             sandwich = draw.bitmap('img/sandwich.png');
             sandwich.x = 450;
             sandwich.y = groundY -80;
             background.addChild(sandwich);
-            
 
-            
-        } // end of render function - DO NOT DELETE
+
+             } // end of render function - DO NOT DELETE
         
         
         // Perform background animation
